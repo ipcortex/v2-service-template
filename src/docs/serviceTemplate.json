@@ -1,0 +1,33 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Service template",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "localhost:3002",
+      "description": "development"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Health check endpoint",
+        "responses": {
+          "200": {
+            "description": "Health check successful",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Service template is alive!"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
