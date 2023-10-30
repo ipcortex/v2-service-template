@@ -1,14 +1,14 @@
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 import {
   EnvConfig,
   Logger,
   validateConfig,
   HttpError,
-} from "@ipcortex/commons";
-import { IsString } from "class-validator";
+} from '@ipcortex/commons';
+import { IsString } from 'class-validator';
 
 dotenv.config();
-const logger = Logger("service-template-v2:Config.ts");
+const logger = Logger('service-template-v2:Config.ts');
 
 class ServiceEnvConfig extends EnvConfig {
   @IsString()
@@ -19,10 +19,10 @@ export const config = (() => {
   try {
     return validateConfig<ServiceEnvConfig>(
       process.env,
-      ServiceEnvConfig
+      ServiceEnvConfig,
     ) as ServiceEnvConfig;
   } catch (e) {
     logger.error(e instanceof Error ? e.message : e);
-    throw new HttpError("Invalid configuration", 500, { e });
+    throw new HttpError('Invalid configuration', 500, { e });
   }
 })();
