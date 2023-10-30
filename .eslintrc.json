@@ -1,11 +1,12 @@
 {
-    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
-    "rules": {
-        "@typescript-eslint/no-explicit-any": "warn",
-        "@typescript-eslint/no-var-requires": "off"
-    },
-    "root": true,
-    "ignorePatterns": ["dist"]
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-var-requires": "off",
+    "quotes": ["error", "single"]
+  },
+  "root": true,
+  "ignorePatterns": ["dist"]
 }

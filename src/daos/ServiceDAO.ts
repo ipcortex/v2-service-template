@@ -1,7 +1,7 @@
 // uncomment below and import the defined DTO
-import /*UpsertDTO*/ "../dtos/UpsertDTO";
+import /*UpsertDTO*/ '../dtos/UpsertDTO';
 // uncomment below and import the model you defined in the prisma schema
-import { /*type DefinedPrismaModel,*/ PrismaClient } from "@prisma/client";
+import { /*type DefinedPrismaModel,*/ PrismaClient } from '@prisma/client';
 // import { plainToClass } from 'class-transformer';
 
 // rename according to defined prisma model

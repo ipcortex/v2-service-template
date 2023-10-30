@@ -1,19 +1,17 @@
-// import { Request, Response } from "express";
-import { Logger } from "@ipcortex/commons";
-import { ServiceModel } from "../model/ServiceModel";
+import { Logger } from '@ipcortex/commons';
+import { ServiceModel } from '../model/ServiceModel';
 
 export class ServiceTemplateController {
   public serviceModel;
-  private logger = Logger("service-template-v2:ServiceTemplateController.ts");
+  private logger = Logger('service-template-v2:ServiceTemplateController.ts');
 
   constructor() {
     this.serviceModel = new ServiceModel();
   }
 
   helloWorld = (): string => {
-    this.logger.info(`Responding with 'Hello world'`);
-    // res.status(200).send("Hello world!");
-    return "Hello world";
+    this.logger.info('Responding with Hello world');
+    return 'Hello world';
   };
 
   // The following are just examples of service route handlers

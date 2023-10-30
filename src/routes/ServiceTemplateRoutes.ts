@@ -1,10 +1,10 @@
-import { type Express } from "express";
-import { CommonRoutesConfig } from "@ipcortex/commons";
-import { ServiceTemplateController } from "../controllers/ServiceTemplateController";
+import { type Express } from 'express';
+import { CommonRoutesConfig } from '@ipcortex/commons';
+import { ServiceTemplateController } from '../controllers/ServiceTemplateController';
 
 export class ServiceTemplateRoutes extends CommonRoutesConfig {
   constructor(app: Express) {
-    super(app, "ServiceTemplateRoutes");
+    super(app, 'ServiceTemplateRoutes');
   }
 
   // 1. get helloworld. Returns 'helloworld' as a string
@@ -25,7 +25,7 @@ export class ServiceTemplateRoutes extends CommonRoutesConfig {
     const serviceTemplateController = new ServiceTemplateController();
     // below are some examples of route handlers
 
-    this.app.route("/helloworld").get(serviceTemplateController.helloWorld);
+    this.app.route('/helloworld').get(serviceTemplateController.helloWorld);
 
     /*
         this.app
