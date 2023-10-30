@@ -1,6 +1,6 @@
 import { app } from "./app";
 import { Logger } from "@ipcortex/commons";
-import { config } from "./config/ServiceConfig";
+import { config } from "./config/ServiceTemplateConfig";
 
 const logger = Logger("service-template-v2:server.ts");
 const port = config.PORT;

@@ -1,19 +1,19 @@
 // uncomment below and import the defined DTO
-import { /*UpsertDTO*/ } from '../dtos/UpsertDTO';
+import /*UpsertDTO*/ "../dtos/UpsertDTO";
 // uncomment below and import the model you defined in the prisma schema
-import { /*type DefinedPrismaModel,*/ PrismaClient } from '@prisma/client';
-import { plainToClass } from 'class-transformer';
+import { /*type DefinedPrismaModel,*/ PrismaClient } from "@prisma/client";
+// import { plainToClass } from 'class-transformer';
 
 // rename according to defined prisma model
 // also rename this file accordingly
 class DefinedPrismaModelDAO {
-    prismaClient: PrismaClient;
+  prismaClient: PrismaClient;
 
-    constructor () {
-        this.prismaClient = new PrismaClient();
-    }
-    // below are just examples of data handlers
-    /*
+  constructor() {
+    this.prismaClient = new PrismaClient();
+  }
+  // below are just examples of data handlers
+  /*
     async add (definedPrismaModel: UpsertDTO): Promise<DefinedPrismaModel> {
         const {
             list,

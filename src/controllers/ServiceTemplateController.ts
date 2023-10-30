@@ -1,20 +1,24 @@
-import { Request, Response } from 'express';
-import { Logger, HttpError } from "@ipcortex/commons"
-import { ServiceModel } from '../model/ServiceModel'
+// import { Request, Response } from "express";
+import { Logger } from "@ipcortex/commons";
+import { ServiceModel } from "../model/ServiceModel";
 
-// change the service name here
-const logger = Logger("service-template-v2:ServiceController.ts");
+export class ServiceTemplateController {
+  public serviceModel;
+  private logger = Logger("service-template-v2:ServiceTemplateController.ts");
 
-export class ServiceController {
-    public serviceModel;
+  constructor() {
+    this.serviceModel = new ServiceModel();
+  }
 
-    constructor() {
-        this.serviceModel = new ServiceModel();
-    }
+  helloWorld = (): string => {
+    this.logger.info(`Responding with 'Hello world'`);
+    // res.status(200).send("Hello world!");
+    return "Hello world";
+  };
 
-    // The following are just examples of service route handlers 
+  // The following are just examples of service route handlers
 
-    /*
+  /*
     upsert = async (req: Request, res: Response): Promise<void> => {
         try {
             const result = await this.serviceModel.upsert(req.body);

@@ -1,0 +1,20 @@
+{"level":"error","message":"Environment variable validation error: An instance of ServiceEnvConfig has failed the validation:\n - property DATABASE_URL has failed the following constraints: isString \n, An instance of ServiceEnvConfig has failed the validation:\n - property PORT has failed the following constraints: isNumber \n, An instance of ServiceEnvConfig has failed the validation:\n - property NODE_ENV has failed the following constraints: isEnum, isString \n","service":"service-template-v2:Config.ts"}
+{"level":"error","message":"Environment variable validation error: An instance of ServiceEnvConfig has failed the validation:\n - property DATABASE_URL has failed the following constraints: isString \n, An instance of ServiceEnvConfig has failed the validation:\n - property PORT has failed the following constraints: isNumber \n, An instance of ServiceEnvConfig has failed the validation:\n - property NODE_ENV has failed the following constraints: isEnum, isString \n","service":"service-template-v2:Config.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}

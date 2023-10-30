@@ -2,18 +2,12 @@
 import express, { Express, json } from "express";
 import "express-async-errors";
 import cors from "cors";
-import {
-  Logger,
-  handleError,
-  type CommonRoutesConfig,
-} from "@ipcortex/commons";
-import { ServiceRoutes } from "./routes/ServiceRoutes";
+import { Logger, handleError } from "@ipcortex/commons";
+import { ServiceTemplateRoutes } from "./routes/ServiceTemplateRoutes";
 
 const app: Express = express();
 
 const logger = Logger("service-template-v2:app.ts");
-
-const routes: CommonRoutesConfig[] = [];
 
 app.use(json());
 app.use(cors());
@@ -23,7 +17,7 @@ try {
     res.status(200).send("Service template is alive!");
   });
 
-  routes.push(new ServiceRoutes(app));
+  new ServiceTemplateRoutes(app);
 } catch (err) {
   logger.error({
     message: "Server error",
