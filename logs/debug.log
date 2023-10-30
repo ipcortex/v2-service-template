@@ -20,3 +20,4 @@
 {"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
 {"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
 {"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
