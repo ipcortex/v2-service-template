@@ -1,40 +1,34 @@
+import { Request, Response } from 'express-serve-static-core';
 import { Logger } from '@ipcortex/commons';
+// import { plainToInstance } from 'class-transformer';
+// import { validate } from 'class-validator';
+// import { HelloWorldDTO } from '../dtos/HelloWorldDTO';
 import { ServiceModel } from '../model/ServiceModel';
+import { HttpError } from '@ipcortex/commons';
 
 export class ServiceTemplateController {
-  public serviceModel;
   private logger = Logger('service-template-v2:ServiceTemplateController.ts');
+  public serviceModel;
 
   constructor() {
     this.serviceModel = new ServiceModel();
   }
 
-  helloWorld = (): string => {
+  getHelloWorld = (): string => {
     this.logger.info('Responding with Hello world');
-    return 'Hello world';
+    return this.serviceModel.getHelloWorld();
   };
 
-  // The following are just examples of service route handlers
-
-  /*
-    upsert = async (req: Request, res: Response): Promise<void> => {
-        try {
-            const result = await this.serviceModel.upsert(req.body);
-            res.status(200).json(result);
-        } catch (e) {
-            logger.error(e instanceof Error ? e.message : e);
-            throw new HttpError('Server Error', 500, {e});
-        }
+  postHelloWorld = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const data = await this.serviceModel.postGetWorld(req.body);
+      res.status(201).json({
+        status: 'success',
+        data,
+      });
+    } catch (e) {
+      this.logger.error(e instanceof Error ? e.message : e);
+      throw new HttpError('Server Error', 500, { e });
     }
-
-    get = async (req: Request, res: Response): Promise<void> => {
-        try {
-            const result = await this.serviceModel.get(req.body.id);
-            res.status(200).send(result);
-        } catch (e) {
-            logger.error(e instanceof Error ? e.message : e);
-            throw new HttpError('Server Error', 500, {e});
-        }
-    }
-    */
+  };
 }

@@ -21,3 +21,74 @@
 {"level":"info","message":"Responding with 'Hello world'","service":"service-template-v2:ServiceTemplateController.ts"}
 {"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
 {"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nCan't reach database server at `localhost`:`5433`\n\nPlease make sure your database server is running at `localhost`:`5433`.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.create()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/helloWorldDAO.ts:15:47\n\n  12 async createHelloWorld(helloWorldExample: HelloWorldDTO): Promise<any> {\n  13   const { name } = plainToClass(HelloWorldDTO, helloWorldExample);\n  14 \n→ 15   return await this.prismaClient.helloWorld.create(\nThe table `public.HelloWorld` does not exist in the current database.","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"Converting circular structure to JSON\n    --> starting at object with constructor 'Socket'\n    |     property 'parser' -> object with constructor 'HTTPParser'\n    --- property 'socket' closes the circle","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"Converting circular structure to JSON\n    --> starting at object with constructor 'Socket'\n    |     property 'parser' -> object with constructor 'HTTPParser'\n    --- property 'socket' closes the circle","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"Converting circular structure to JSON\n    --> starting at object with constructor 'Socket'\n    |     property 'parser' -> object with constructor 'HTTPParser'\n    --- property 'socket' closes the circle","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}

@@ -1,5 +1,6 @@
 import { type Express } from 'express';
-import { CommonRoutesConfig } from '@ipcortex/commons';
+import { CommonRoutesConfig, validateRequest } from '@ipcortex/commons';
+import { HelloWorldDTO } from '../dtos/HelloWorldDTO';
 import { ServiceTemplateController } from '../controllers/ServiceTemplateController';
 
 export class ServiceTemplateRoutes extends CommonRoutesConfig {
@@ -9,23 +10,15 @@ export class ServiceTemplateRoutes extends CommonRoutesConfig {
 
   configureRoutes(): Express {
     const serviceTemplateController = new ServiceTemplateController();
-    // below are some examples of route handlers
 
-    this.app.route('/helloworld').get(serviceTemplateController.helloWorld);
+    this.app
+      .route('/helloWorld')
+      .get(serviceTemplateController.getHelloWorld)
+      .post(
+        validateRequest(HelloWorldDTO),
+        serviceTemplateController.postHelloWorld,
+      );
 
-    /*
-        this.app
-            .route('/endpoints')
-            .post(
-                validateRequest(UpsertDTO),
-                serviceController.upsert
-            );
-
-        this.app.route('/endpoints/:enpointId')
-            .get(
-                serviceController.get
-        );
-        */
     return this.app;
   }
 }

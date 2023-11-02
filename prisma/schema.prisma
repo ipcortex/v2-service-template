@@ -10,20 +10,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// below is an example of a prisma model
-// this will also be yout DB table
-
-//model PrismaModel {
-//  id                    String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-//  name                  String
-//  lastUpdate            DateTime?     @map("last_update") @db.Timestamptz()
-//  type                  RecordType?   @map("record_type")
-//
-//  @@map("prismamodels")
-//}
-
-//enum RecordType {
-//  APPLICATION
-//  DEVICE
-//}
+model HelloWorld {
+  id      String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name    String
+}
 
