@@ -92,3 +92,92 @@
 {"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
 {"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
 {"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Updating Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Updating Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.update()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/ServiceTemplateDAO.ts:37:47\n\n  34 async updateHelloWorldById(\n  35   helloWorldExample: UpdateHelloWorldDTO,\n  36 ): Promise<any> {\n→ 37   return await this.prismaClient.helloWorld.update({\n         where: {\n       ?   id?: String\n         },\n         data: {\n           name: undefined\n         }\n       })\n\nArgument where of type HelloWorldWhereUniqueInput needs at least one argument. Available args are listed in green.\n\nNote: Lines with ? are optional.\n","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Updating Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.update()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/ServiceTemplateDAO.ts:37:47\n\n  34 async updateHelloWorldById(\n  35   helloWorldExample: UpdateHelloWorldDTO,\n  36 ): Promise<any> {\n→ 37   return await this.prismaClient.helloWorld.update({\n         where: {\n       ?   id?: String\n         },\n         data: {\n           name: undefined\n         }\n       })\n\nArgument where of type HelloWorldWhereUniqueInput needs at least one argument. Available args are listed in green.\n\nNote: Lines with ? are optional.\n","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Updating Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.update()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/ServiceTemplateDAO.ts:37:47\n\n  34 async updateHelloWorldById(\n  35   helloWorldExample: UpdateHelloWorldDTO,\n  36 ): Promise<any> {\n→ 37   return await this.prismaClient.helloWorld.update({\n         where: {\n       ?   id?: String\n         },\n         data: {\n           name: undefined\n         }\n       })\n\nArgument where of type HelloWorldWhereUniqueInput needs at least one argument. Available args are listed in green.\n\nNote: Lines with ? are optional.\n","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Updating Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"error","message":"\nInvalid `this.prismaClient.helloWorld.update()` invocation in\n/Users/rsmith/Documents/IP Cortex/Projects/v2/v2-service-template/src/daos/ServiceTemplateDAO.ts:37:47\n\n  34 async updateHelloWorldById(\n  35   helloWorldExample: UpdateHelloWorldDTO,\n  36 ): Promise<any> {\n→ 37   return await this.prismaClient.helloWorld.update({\n         where: {\n       ?   id?: String\n         },\n         data: {\n           name: 'updated name'\n         }\n       })\n\nArgument where of type HelloWorldWhereUniqueInput needs at least one argument. Available args are listed in green.\n\nNote: Lines with ? are optional.\n","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Responding with Hello world","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Creating Hello world entry","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Updating Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}
+{"level":"info","message":"Getting Hello world by ID","service":"service-template-v2:ServiceTemplateController.ts"}

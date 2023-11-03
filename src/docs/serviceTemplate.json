@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "localhost:3002",
+      "url": "http://localhost:3002",
       "description": "development"
     }
   ],
@@ -25,6 +25,139 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/helloWorld": {
+      "get": {
+        "summary": "Get HelloWorld",
+        "responses": {
+          "200": {
+            "description": "HelloWorld retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "Hello, World"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create HelloWorld",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/src/dtos/HelloWorldDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "HelloWorld created successfully"
+          }
+        }
+      }
+    },
+    "/helloWorld/{id}": {
+      "get": {
+        "summary": "Get HelloWorld by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HelloWorld retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/src/dtos/HelloWorldDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create HelloWorld with specific ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/src/dtos/HelloWorldDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "HelloWorld created successfully"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update HelloWorld by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/src/dtos/HelloWorldDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "HelloWorld updated successfully"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HelloWorldDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           }
         }
       }

@@ -19,6 +19,15 @@ export class ServiceTemplateRoutes extends CommonRoutesConfig {
         serviceTemplateController.postHelloWorld,
       );
 
+    this.app
+      .route('/helloWorld/:id')
+      .get(serviceTemplateController.getHelloWorldById)
+      .post(
+        validateRequest(HelloWorldDTO),
+        serviceTemplateController.postHelloWorld,
+      )
+      .patch(serviceTemplateController.updateHelloWorldById);
+
     return this.app;
   }
 }
