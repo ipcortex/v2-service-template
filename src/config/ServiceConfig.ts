@@ -3,7 +3,7 @@ import { EnvConfig, Logger, validateConfig, HttpError } from "@ipcortex/commons"
 import { IsString } from 'class-validator';
 
 dotenv.config()
-const logger = Logger("endpoint-service-v2:Config.ts");
+const logger = Logger("templates-service-v2:Config.ts");
 
 class ServiceEnvConfig extends EnvConfig {
     @IsString()

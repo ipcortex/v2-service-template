@@ -1,0 +1,459 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Templates Service",
+        "description": "This API is a template or framework for building other services for IP Cortex systems. ",
+        "version": "0.0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "local"
+        },
+        {
+            "url": "http://localhost:3010",
+            "description": "test"
+        },
+        {
+            "url": "http://localhost:3020",
+            "description": "development"
+        },
+        {
+            "url": "http://localhost:3030",
+            "description": "staging"
+        },
+        {
+            "url": "http://localhost:3040",
+            "description": "production"
+        }
+    ],
+    "paths": {
+        "/api/templates/health": {
+            "get": {
+                "summary": "Health check endpoint",
+                "tags": ["GET"],
+                "responses": {
+                    "200": {
+                        "description": "Health check successful",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Templates service is alive!"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/401"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/404"
+                    },
+                    "5XX": {
+                        "$ref": "#/components/responses/5XX"
+                    } 
+                }
+            }
+        },
+        "/api/templates/{id}": {
+            "get": {
+                "tags": ["GET"],
+                "description": "Get a template",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/templateId"
+                    } 
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/Template"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/400"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/401"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/404"
+                    },
+                    "5XX": {
+                        "$ref": "#/components/responses/5XX"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Update a template.",
+                "tags": ["POST"],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/templateId"
+                    } 
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTemplate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/Template"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/400"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/401"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/404"
+                    },
+                    "5XX": {
+                        "$ref": "#/components/responses/5XX"
+                    }
+                }
+            }
+        },
+        "/api/templates": {
+            "get": {
+                "summary": "Get a list of templates",
+                "tags": ["GET"],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Template name",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/BaseTemplate/properties/name"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Template type",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/components/schemas/BaseTemplate/properties/type"
+                        }
+                    },   
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page of templates list to be retrieved",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 2
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "description": "Number of templates to be displayed on the retrieved page",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "maximum": 200,
+                            "minimum": 20
+                        },
+                        "example": 100
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/Templates"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/400"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/401"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/404"
+                    },
+                    "5XX": {
+                        "$ref": "#/components/responses/5XX"
+                    } 
+                }
+            },
+            "post": {
+                "summary": "Add a template.",
+                "tags": ["POST"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddTemplate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/Template"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/400"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/401"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/404"
+                    },
+                    "5XX": {
+                        "$ref": "#/components/responses/5XX"
+                    }
+                }
+
+            }
+        }
+    },
+    "components": {
+        "parameters": {
+            "templateId": {
+                "name": "id",
+                "in": "path",
+                "description": "Template ID",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "description": "Template DB id",
+                    "format": "UUID",
+                    "example": "0dc6980a-5f4a-4cd9-b98b-f5c6e781fb72"
+                }
+            } 
+        },
+        "schemas" : {
+            "BaseTemplate": {
+                "type": "object",
+                "description": "This is the base representation of template.",
+                "required": [
+                    "type",
+                    "name"
+                ],
+                "properties": {
+                    "parentId": {
+                        "type": "string",
+                        "description": "Parent template id",
+                        "format": "UUID",
+                        "example": "93da90be-f490-43c5-912b-3f2d250f5e9a"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Actual template name",
+                        "minLength": 4,
+                        "maxLength": 32,
+                        "example": "SDT ltd."
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Template type",
+                        "enum": [ "TEMPLATE_A", "TEMPLATE_B"]
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Template creation date time",
+                        "format": "date-tine",
+                        "example": "2023-12-12T09:42:37.795Z"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Template last update date time",
+                        "format": "date-tine",
+                        "example": "2023-12-12T09:42:37.795Z"
+                    }
+                }
+            },
+            "UpdateTemplate": {
+                "allOf": [
+                    { "$ref": "#/components/schemas/BaseTemplate" },
+                    {
+                        "type": "object",
+                        "description": "UpdateTemplate represents an template update request.",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Template DB id",
+                                "format": "UUID",
+                                "example": "0dc6980a-5f4a-4cd9-b98b-f5c6e781fb72"
+                            }
+                        }
+                    }
+                ]
+            },
+            "AddTemplate": {
+                "allOf": [
+                    { "$ref": "#/components/schemas/BaseTemplate" },
+                    {
+                        "description": "AddTemplate represents an template update request."
+                    }
+                ]
+            },
+            "Templates": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/UpdateTemplate"
+                }
+            },
+            "ErrorMessage": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ValidationErrorMessage": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationErrorDetail"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ValidationErrorDetail": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string"
+                    },
+                    "property": {
+                        "type": "string"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "constraints": {
+                        "type": "object"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "Template": {
+                "description": "Request successful - Returns template",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/UpdateTemplate",
+                            "parentTemplateName": {
+                                "type": "string",
+                                "description": "Parent template name",
+                                "minLength": 4,
+                                "example": "SDT ltd."
+                            }
+                        },
+                        "example": {
+                            "id": "0070c372-0d9f-473a-aa24-448c6593ac59",
+                            "parentId": "cf086ab4-3b8b-4a0d-b81f-c15d6296fb3a",
+                            "name": "Demo Test Template",
+                            "type": "TEMPLATE_A",
+                            "createdAt": "2024-04-03T12:11:05.541Z",
+                            "updatedAt": "2024-04-03T12:11:05.541Z",
+                            "parentTemplateName": "Template name"
+                        }
+                    }
+                }
+            },
+            "Templates": {
+                "description": "Request successful - Returns a list of templates",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Templates",
+                            "parentTemplateName": {
+                                "type": "string",
+                                "description": "Parent template name",
+                                "minLength": 4,
+                                "example": "SDT"
+                            }
+                        },
+                        "example": {
+                            "templates": [
+                                {
+                                    "id": "0070c372-0d9f-473a-aa24-448c6593ac59",
+                                    "parentId": "cf086ab4-3b8b-4a0d-b81f-c15d6296fb3a",
+                                    "name": "Demo Test Template",
+                                    "type": "TEMPLATE_A",
+                                    "createdAt": "2024-04-03T12:11:05.541Z",
+                                    "updatedAt": "2024-04-03T12:11:05.541Z",
+                                    "parentTemplateName": "SDT"
+                                },
+                                {
+                                    "id": "00903fd5-2582-4153-b6fe-f5bfa8380edb",
+                                    "parentId": "5790283e-12a1-4f82-9c24-9795b0b0a299",
+                                    "name": "Template 123",
+                                    "type": "TEMPLATE_B",
+                                    "createdAt": "2024-04-03T12:11:05.485Z",
+                                    "updatedAt": "2024-04-03T12:11:05.485Z",
+                                    "parentTemplateName": "SDT"    
+                                }
+                            ],
+                            "results": 2,
+                            "pagesAvailable": 1
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Not found"
+            },
+            "401": {
+                "description": "Access token is missing or invalid"
+            },
+            "400": {
+                "description": "Bad request, check data is valid",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ValidationErrorMessage"
+                        }
+                    }
+                }
+            },
+            "5XX": {
+                "description": "Unexpected error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ErrorMessage"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

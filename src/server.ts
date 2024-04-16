@@ -2,7 +2,7 @@ import { app } from './app';
 import { Logger } from '@ipcortex/commons';
 import { config } from './config/ServiceConfig';
 
-const logger = Logger('routing-service-v2:server.ts');
+const logger = Logger('templates-service-v2:server.ts');
 const port = config.PORT;
 
 try {

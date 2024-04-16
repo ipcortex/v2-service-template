@@ -1,25 +1,24 @@
 /* eslint-disable */
 import express, { Express, json } from 'express';
 import 'express-async-errors';
+import 'reflect-metadata';
 import cors from 'cors';
-import { Logger, handleError, type CommonRoutesConfig } from '@ipcortex/commons';
-import { ServiceRoutes } from './routes/ServiceRoutes';
+import { Logger, handleError } from '@ipcortex/commons';
+import { TemplateRoutes } from './routes/TemplateRoutes';
 
 const app: Express = express();
 
-const logger = Logger('routing-service-v2:app.ts');
-
-const routes: CommonRoutesConfig[] = [];
+const logger = Logger('templates-service-v2:app.ts');
 
 app.use(json());
 app.use(cors());
 
 try {
-    app.get('/', (req, res) => {
-        res.status(200).send('Endpoint is alive!');
-    });
 
-    routes.push(new ServiceRoutes(app));
+    app.get('/templates/health', (req, res) => {
+        res.status(200).send('Templates service is alive!');
+    });
+    new TemplateRoutes(app);
 
 } catch (err) {
     logger.error({
@@ -28,6 +27,6 @@ try {
     });
 }
 
-app.use(handleError);
+app.use(handleError());
 
 export { app };
