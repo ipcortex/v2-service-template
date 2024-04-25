@@ -1,11 +1,9 @@
-import { TemplateType } from '.prisma/client';
 import { expect } from 'chai';
 import request from 'supertest';
 import { v4 as uuidv4 } from 'uuid';
 import { app } from '../src/app';
 import { template1, template2 } from './testingData/TemplatesData';
 import { createDeepCopy } from './testingHelpers/createDeepCopy';
-import { createTestingTemplate } from './testingHelpers/createTestingTemplate';
 import { disconnectPrisma } from './testingHelpers/dbConnection';
 import { deleteTemplates } from './testingHelpers/deleteTemplates';
 
