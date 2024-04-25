@@ -56,9 +56,9 @@ describe('Templates Service', () => {
             .expect(200);
 
         expect(body).to.have.property('templates').to.be.an('array');
-        expect(body).to.have.property('results').to.be.a('number');
+        expect(body).to.have.property('resultCount').to.be.a('number');
         expect(body).to.have.property('pagesAvailable').to.be.a('number');
-        expect(body.templates.length).to.be.greaterThanOrEqual(body.results);
+        expect(body.templates.length).to.be.greaterThanOrEqual(body.resultCount);
     });
 
     it('listTemplates -- should return 404 "Not Found"', async () => {

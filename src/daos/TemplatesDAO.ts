@@ -1,6 +1,5 @@
 import { UpsertTemplateDTO } from '../dtos/UpsertTemplateDTO';
 import { Prisma, type Template, PrismaClient } from '@prisma/client';
-import { HttpError } from '@ipcortex/commons';
 import { plainToClass } from 'class-transformer';
 
 export interface ExtendedTemplate extends Template {
@@ -14,7 +13,7 @@ class TemplatesDAO {
         this.prismaClient = new PrismaClient();
     }
 
-    async addTemplate(templateToAdd: UpsertTemplateDTO): Promise<ExtendedTemplate> {
+    async addTemplate(templateToAdd: UpsertTemplateDTO): Promise<Template> {
         const {
             parentId,
             name,
@@ -53,85 +52,30 @@ class TemplatesDAO {
         return this.getTemplateById(updatedTemplate.id);
     }
 
-    async getTemplateById (id: string): Promise<ExtendedTemplate> {
-        const template = await this.prismaClient.template.findFirstOrThrow({
-            where: { 
+    async getTemplateById (id: string): Promise<Template> {
+        return await this.prismaClient.template.findFirstOrThrow({where: { 
                 id 
             }
         });
-
-        // Fetch parentTemplateName for the template
-        const [parentTemplate] = await Promise.all([
-            template.parentId
-                ? this.prismaClient.template.findFirstOrThrow({
-                    where: { id: template.parentId }
-                })
-                : null
-            // Add more queries here for other related entities
-        ]);
-
-        return {
-            ...template,
-            parentTemplateName: parentTemplate?.name || 'Not set'
-        };
     } 
 
-    async listTemplates(
-        pageSize: number, params?: Prisma.TemplateWhereInput,
-        sortBy?: Prisma.TemplateOrderByWithRelationInput, page: number = 1
-    ): Promise<{ templates: ExtendedTemplate[], pagesAvailable: number, results: number }> {
-        const entriesForQuery = await this.prismaClient.template.count({
-            where: { 
-                ...params 
-            }
-        });
-  
-        const pagesAvailable = Math.ceil(entriesForQuery / pageSize);
-  
-        if (page > pagesAvailable) {
-            throw new HttpError(`No templates on page ${page}. Only ${pagesAvailable} pages are available`, 404);
-        }
-  
-        page = page - 1;
-  
-        const orderBy = [];
-  
-        for (const key in sortBy) {
-                orderBy.push({
-                [key]: sortBy[key as keyof Prisma.TemplateOrderByWithRelationInput]
-            });
-        }
-  
-        const templates = await this.prismaClient.template.findMany({
-            take: pageSize,
-            skip: pageSize * page,
-            where: {
-            ...params
-            },
-            orderBy
-        });
-        
-        // Fetch parentTemplateName for each template
-        const extendedTemplatesPromises = templates.map(async (template) => {
-            const [parentTemplate] = await Promise.all([
-                template.parentId
-                    ? this.prismaClient.template.findFirstOrThrow({
-                        where: { id: template.parentId }
-                    })
-                    : null
-                // Add more queries here for other related entities
-            ]);
-
-            return {
-                ...template,
-                parentTemplateName: parentTemplate?.name || 'Not set'
-            };
-        });
-
-        const extendedTemplates = await Promise.all(extendedTemplatesPromises);
-
-        return { templates: extendedTemplates, pagesAvailable, results: entriesForQuery };
+    async getTotalEndpointsEntries (params?: Prisma.TemplateWhereInput): Promise<number> {
+        return await this.prismaClient.template.count({where: params});
     }
+
+    async listTemplates (
+        pageSize: number, page: number, 
+        params?: Prisma.TemplateWhereInput, orderBy?: Prisma.TemplateOrderByWithRelationInput
+    ): Promise<Template[]> {
+          return await this.prismaClient.template.findMany({
+              where: { 
+                  ...params 
+              },
+              orderBy,
+              take: pageSize,
+              skip: pageSize * (page - 1)
+          })
+      }
 }
 // rename according to defined prisma model
 export const templatesDAO = new TemplatesDAO();

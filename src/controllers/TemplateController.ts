@@ -26,9 +26,9 @@ export class TemplateController {
     }
 
     listTemplates = async (req: Request, res: Response): Promise<void> => {
-        const result = await this.templateModel.listTemplates(
-            plainToInstance(ListTemplatesDTO, req.body, { exposeUnsetFields: false })
-        );
+        const {page, pageSize, params, orderBy} = plainToInstance(ListTemplatesDTO, req.body, { exposeUnsetFields: false })
+        console.log(req.body);
+        const result = await this.templateModel.listTemplates(page, pageSize, params, orderBy);
         res.status(200).json(result);
     }
 
