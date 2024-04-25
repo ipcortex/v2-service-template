@@ -21,7 +21,7 @@ export class TemplateModel {
   async listTemplates(
     page: number, pageSize: number,
     params?: Prisma.TemplateWhereInput, orderBy?: Prisma.TemplateOrderByWithRelationInput) {
-    const resultCount = await templatesDAO.getTotalEndpointsEntries(params);
+    const resultCount = await templatesDAO.getTotalTemplatesEntries(params);
     const pagesAvailable = Math.ceil(resultCount / pageSize);
 
     if(page > pagesAvailable) {

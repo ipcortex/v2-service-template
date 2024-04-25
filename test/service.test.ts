@@ -5,6 +5,7 @@ import { app } from '../src/app';
 import { template1, template2 } from './testingData/TemplatesData';
 import { createDeepCopy } from './testingHelpers/createDeepCopy';
 import { disconnectPrisma } from './testingHelpers/dbConnection';
+import { createTestingTemplate } from './testingHelpers/createTestingTemplate';
 import { deleteTemplates } from './testingHelpers/deleteTemplates';
 
 
@@ -30,12 +31,16 @@ describe('Templates Service', () => {
     });
 
     it('getTemplate -- should return an template', async () => {
+        const addedTemplate = await createTestingTemplate(template2);
+
+        createdTemplates.push(addedTemplate.id);
+
         const { body } = await request(app)
-            .get(`/templates/${createdTemplates[0]}`)
+            .get(`/templates/${addedTemplate.id}`)
             .send()
             .expect(200);
 
-        expect(body.name).to.equal('Template 1');
+        expect(body.name).to.equal('Template 2');
     });
 
     it('getTemplate -- should return 404 "Not Found"', async () => {
@@ -71,20 +76,15 @@ describe('Templates Service', () => {
     });
 
     it('updateTemplate -- should update an template and return the updated template', async () => {
-        const postRequestData = template2;
+        const addedTemplate = await createTestingTemplate(template2);
 
-        const { body } = await request(app)
-            .post('/templates')
-            .send(postRequestData)
-            .expect(201);
+        createdTemplates.push(addedTemplate.id);
 
-        createdTemplates.push(body.id);
-
-        const updatedTemplate = createDeepCopy(body);
+        const updatedTemplate = createDeepCopy(addedTemplate);
         updatedTemplate.name = 'Template 2 updated';
 
         const { body: updatedBody } = await request(app)
-            .post(`/templates/${body.id}`)
+            .post(`/templates/${addedTemplate.id}`)
             .send(updatedTemplate)
             .expect(200);
 

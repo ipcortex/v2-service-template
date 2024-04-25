@@ -59,7 +59,7 @@ class TemplatesDAO {
         });
     } 
 
-    async getTotalEndpointsEntries (params?: Prisma.TemplateWhereInput): Promise<number> {
+    async getTotalTemplatesEntries (params?: Prisma.TemplateWhereInput): Promise<number> {
         return await this.prismaClient.template.count({where: params});
     }
 
