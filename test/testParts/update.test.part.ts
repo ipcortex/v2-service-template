@@ -5,8 +5,13 @@ import { template2 } from '../testingData/TemplatesData';
 import { createdTemplates } from '../testingHelpers/cleanup';
 import { createDeepCopy } from '../testingHelpers/createDeepCopy';
 import { createTestingTemplate } from '../testingHelpers/createTestingTemplate';
+import { cleanup } from '../testingHelpers/cleanup';
 
 describe('Testing Update Template', () => {
+    after(async () => {
+        await cleanup();
+    });
+
     it('updateTemplate -- should update an template and return the updated template', async () => {
         const addedTemplate = await createTestingTemplate(template2);
 

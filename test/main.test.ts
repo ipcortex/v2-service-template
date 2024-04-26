@@ -1,3 +1,4 @@
+import { disconnectPrisma } from './testingHelpers/dbConnection';
 import { cleanup } from './testingHelpers/cleanup';
 import './testParts/add.test.part';
 import './testParts/get.test.part';
@@ -7,4 +8,5 @@ import './testParts/validation.test.part';
 
 after(async () => {
     await cleanup();
+    disconnectPrisma();
 });

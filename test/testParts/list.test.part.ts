@@ -1,9 +1,19 @@
 import { expect } from 'chai';
 import request from 'supertest';
 import { app } from '../../src/app';
+import { createTestingTemplate } from '../testingHelpers/createTestingTemplate';
+import { cleanup } from '../testingHelpers/cleanup';
+import { template1, template2 } from '../testingData/TemplatesData';
 
 describe('Testing List Templates', () => {
+    after(async () => {
+        await cleanup();
+    });
+
     it('listTemplates -- should return a list of templates', async () => {
+        await createTestingTemplate(template1);
+        await createTestingTemplate(template2);
+
         const { body } = await request(app)
             .get(`/templates`)
             .send({pageSize: 100})

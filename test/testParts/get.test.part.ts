@@ -5,8 +5,13 @@ import { app } from '../../src/app';
 import { template2 } from '../testingData/TemplatesData';
 import { createTestingTemplate } from '../testingHelpers/createTestingTemplate';
 import { createdTemplates } from '../testingHelpers/cleanup';
+import { cleanup } from '../testingHelpers/cleanup';
 
 describe('Testing Get Templates', () => {
+    after(async () => {
+        await cleanup();
+    });
+
     it('getTemplate -- should return an template', async () => {
         const addedTemplate = await createTestingTemplate(template2);
 

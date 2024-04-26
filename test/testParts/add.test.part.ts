@@ -4,8 +4,13 @@ import { app } from '../../src/app';
 import { template1, template2 } from '../testingData/TemplatesData';
 import { createDeepCopy } from '../testingHelpers/createDeepCopy';
 import { createdTemplates } from '../testingHelpers/cleanup';
+import { cleanup } from '../testingHelpers/cleanup';
 
 describe('Testing Add Templates', () => {
+    after(async () => {
+        await cleanup();
+    });
+
     it('addTemplate -- should add a template and return the added template', async () => {
         const postRequestData = template1;
 
