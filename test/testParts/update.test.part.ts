@@ -2,9 +2,9 @@ import { expect } from 'chai';
 import request from 'supertest';
 import { app } from '../../src/app';
 import { template2 } from '../testingData/TemplatesData';
+import { createdTemplates } from '../testingHelpers/cleanup';
 import { createDeepCopy } from '../testingHelpers/createDeepCopy';
 import { createTestingTemplate } from '../testingHelpers/createTestingTemplate';
-import { createdTemplates } from '../testingHelpers/cleanup';
 
 describe('Testing Update Template', () => {
     it('updateTemplate -- should update an template and return the updated template', async () => {
