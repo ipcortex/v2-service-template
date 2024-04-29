@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import request from 'supertest';
 import { app } from '../../src/app';
-import { createTestingTemplate } from '../testingHelpers/createTestingTemplate';
-import { cleanup } from '../testingHelpers/cleanup';
 import { template1, template2 } from '../testingData/TemplatesData';
+import { cleanup, createdTemplates } from '../testingHelpers/cleanup';
+import { createTestingTemplate } from '../testingHelpers/createTestingTemplate';
 
 describe('Testing List Templates', () => {
     after(async () => {
@@ -11,8 +11,10 @@ describe('Testing List Templates', () => {
     });
 
     it('listTemplates -- should return a list of templates', async () => {
-        await createTestingTemplate(template1);
-        await createTestingTemplate(template2);
+        const { id: idOne } = await createTestingTemplate(template1);
+        const {id: idTwo} = await createTestingTemplate(template2);
+
+        createdTemplates.push(idOne, idTwo);
 
         const { body } = await request(app)
             .get(`/templates`)
