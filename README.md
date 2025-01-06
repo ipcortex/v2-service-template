@@ -6,7 +6,8 @@
 2. Clone and Pull your new repository and set up a "dev" branch
 3. Change the service name in package.json file to the correct name
 4. Change the file names and class names to the correct context (eg. TemplateController to PhoneBookController)
-5. If unsure do not hesitate to ask
+5. Change service name in line 3 of the Dockerfile
+6. If unsure do not hesitate to ask
 
 ### Private NPM package
 
